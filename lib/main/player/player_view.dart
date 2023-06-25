@@ -131,7 +131,9 @@ class PlayerView extends StatelessWidget {
                                     ),
                                   ),
                                   IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      BlocProvider.of<MyPlayerCubit>(context).onBackward(state.currentIndex, songList);
+                                    },
                                     icon: const Icon(
                                       Icons.arrow_back_ios,
                                       size: 30,
@@ -151,6 +153,7 @@ class PlayerView extends StatelessWidget {
                                   IconButton(
                                     onPressed: () {
                                       /*BlocProvider.of<MyPlayerCubit>(context).forwardTap(state.currentIndex,songList);*/
+                                      BlocProvider.of<MyPlayerCubit>(context).onForward(state.currentIndex, songList);
                                     },
                                     icon: const Icon(
                                       Icons.arrow_forward_ios,

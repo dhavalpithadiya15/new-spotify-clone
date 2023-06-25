@@ -31,12 +31,17 @@ class Routes {
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeView());
       case Routes.detail:
-        var data= routeSettings.arguments as AudioModal;
-        return MaterialPageRoute(builder: (context) =>  DetailView(data: data));
+        var data = routeSettings.arguments as AudioModal;
+        return MaterialPageRoute(builder: (context) => DetailView(data: data));
       case Routes.player:
-        var data= routeSettings.arguments as Map<String,dynamic>;
+        var data = routeSettings.arguments as Map<String, dynamic>;
         print(data['songList']);
-        return MaterialPageRoute(builder: (context) =>  PlayerView(poster:  data['poster'],songList: data['songList'],passedIndex: data['index'],));
+        return MaterialPageRoute(
+            builder: (context) => PlayerView(
+                  poster: data['poster'],
+                  songList: data['songList'],
+                  passedIndex: data['index'],
+                ));
       default:
         return errorRoute();
     }

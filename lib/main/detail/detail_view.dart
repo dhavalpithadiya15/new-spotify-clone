@@ -36,9 +36,14 @@ class DetailView extends StatelessWidget {
                       SliverAppBar(
                         backgroundColor: Colors.transparent,
                         pinned: true,
-                        expandedHeight: 199,
+                        expandedHeight: state.imageContainerInitialSize,
                         flexibleSpace: FlexibleSpaceBar(
-                          background: Container(height: 99, width: 100,decoration: BoxDecoration(image: DecorationImage(image: AssetImage(data.poster))),),
+                          background: Transform.scale(
+                            scale: state.imageScale,
+                            child: Image(
+                              image: AssetImage(data.poster),
+                            ),
+                          ),
                         ),
                       ),
                       SliverList(
@@ -71,6 +76,7 @@ class DetailView extends StatelessWidget {
     );
   }
 }
+
 /*
 class CustomScrollingWidget extends StatefulWidget {
   const CustomScrollingWidget({Key? key}) : super(key: key);

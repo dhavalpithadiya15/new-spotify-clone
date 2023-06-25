@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:just_audio/just_audio.dart';
@@ -83,8 +81,25 @@ class MyPlayerCubit extends Cubit<MyPlayerState> {
     print("current index==>${state.currentIndex}");
   }
 
-/*  void forwardTap(int passedIndex, List<SongsModal> songList) {
-    passedIndex=passedIndex+1;
-    print(passedIndex);
-  }*/
+
+
+  void onForward(int currentIndex, List<SongsModal> songList) {
+    print("=== ${currentIndex} ${songList.length}");
+    if (currentIndex < songList.length - 1) {
+      currentIndex++;
+      state.audioPlayer.setAsset(songList[currentIndex].audio);
+      print("Current index forward == > $currentIndex");
+      emit(state.copyWith(currentIndex: currentIndex));
+    }
+  }
+
+  void onBackward(int currentIndex, List<SongsModal> songList) {
+    print(songList.length);
+    if (currentIndex > 0) {
+      currentIndex--;
+      state.audioPlayer.setAsset(songList[currentIndex].audio);
+      print("Current index forward == > $currentIndex");
+      emit(state.copyWith(currentIndex: currentIndex));
+    }
+  }
 }

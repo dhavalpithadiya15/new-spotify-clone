@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class AudioModal extends Equatable{
+class AudioModal extends Equatable {
   final int id;
   final String albumName;
   final String poster;
@@ -14,7 +14,7 @@ class AudioModal extends Equatable{
   });
 
   @override
-  List<Object?> get props => [id,albumName,poster,audioList];
+  List<Object?> get props => [id, albumName, poster, audioList];
 
   AudioModal copyWith({
     int? id,
@@ -31,7 +31,7 @@ class AudioModal extends Equatable{
   }
 }
 
-class SongsModal{
+class SongsModal {
   final String audioName;
   final String audio;
 

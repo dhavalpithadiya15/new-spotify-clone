@@ -12,9 +12,8 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then((value) => Navigator.pushReplacementNamed(context, Routes.boarding));
+    Future.delayed(const Duration(seconds: 3)).then((value) => Navigator.pushReplacementNamed(context, Routes.boarding));
   }
   @override
   Widget build(BuildContext context) {
