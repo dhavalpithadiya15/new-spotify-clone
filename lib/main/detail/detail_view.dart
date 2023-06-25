@@ -38,7 +38,7 @@ class DetailView extends StatelessWidget {
                         pinned: true,
                         expandedHeight: 199,
                         flexibleSpace: FlexibleSpaceBar(
-                          background: Container(height: 100, width: 100,decoration: BoxDecoration(image: DecorationImage(image: AssetImage(data.poster))),),
+                          background: Container(height: 99, width: 100,decoration: BoxDecoration(image: DecorationImage(image: AssetImage(data.poster))),),
                         ),
                       ),
                       SliverList(
