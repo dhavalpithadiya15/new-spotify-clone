@@ -81,8 +81,6 @@ class MyPlayerCubit extends Cubit<MyPlayerState> {
     print("current index==>${state.currentIndex}");
   }
 
-
-
   void onForward(int currentIndex, List<SongsModal> songList) {
     print("=== ${currentIndex} ${songList.length}");
     if (currentIndex < songList.length - 1) {

@@ -37,11 +37,12 @@ class Routes {
         var data = routeSettings.arguments as Map<String, dynamic>;
         print(data['songList']);
         return MaterialPageRoute(
-            builder: (context) => PlayerView(
-                  poster: data['poster'],
-                  songList: data['songList'],
-                  passedIndex: data['index'],
-                ));
+          builder: (context) => PlayerView(
+            poster: data['poster'],
+            songList: data['songList'],
+            passedIndex: data['index'],
+          ),
+        );
       default:
         return errorRoute();
     }

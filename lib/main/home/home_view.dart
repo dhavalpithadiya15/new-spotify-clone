@@ -68,7 +68,7 @@ class HomeView extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, Routes.detail,arguments: state.listOfPoster[index]);
+                            Navigator.pushNamed(context, Routes.detail, arguments: state.listOfPoster[index]);
                           },
                           child: ListViewItem(audio: state.listOfPoster[index]),
                         );
